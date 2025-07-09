@@ -59,17 +59,9 @@ flask run
 - flask-cors
 - nepali-datetime
 
-### 📜 License
+## 📝 License
+This project is licensed under the MIT License.
 
-```This project is licensed under the **MIT License**.
-
-© 2025 Sagar Sandesh Oli
-
-You are free to use, modify, and distribute this software for any purpose, provided the original copyright 
-and license notice are included in all copies or substantial portions of the software.
-
-See the [LICENSE](LICENSE) file for full details.
-```
 ## 👤 Author
 Mr. Sagar Sandesh Oli
 

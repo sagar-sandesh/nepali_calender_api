@@ -1,33 +1,60 @@
-# Nepali Calendar API
+# Nepali Calendar API 🇳🇵
 
-A Flask-based API for Nepali calendar features including date conversion (AD ↔ BS), fetching today's date in both calendars, and managing Nepali festivals. Admin routes are secured by API key authentication, and data is stored in JSON files.
-
----
-
-## Features
-
-- Convert Gregorian (AD) dates to Nepali Bikram Sambat (BS) and vice versa
-- Get today's date in AD and BS with Nepali weekday and digits
-- Retrieve festivals for specific years or dates
-- Admin API to add festivals (secured with API key authentication)
-- Uses JSON files for data persistence — no database required
+A lightweight Flask API to effortlessly work with Nepali dates.  
+Convert between Gregorian (AD) and Nepali Bikram Sambat (BS), get today’s date with Nepali digits & weekday, and manage festivals—all with simple REST endpoints.
 
 ---
 
-## Installation
+## 🚀 Quick Setup
 
-1. Clone the repository:
+1. **Clone & install dependencies:**
 
-   ```bash
-   git clone https://github.com/yourusername/nepali-calendar-api.git
-   cd nepali-calendar-api
-2. Create and activate a virtual environment:
-   python3 -m venv venv
-   source venv/bin/activate  # Linux/macOS
-   venv\Scripts\activate     # Windows
-3. Install dependencies:
-   pip install -r requirements.txt
-4. Set your admin API key in utils/auth.py:
-   ADMIN_API_KEY = "your-secret-admin-key"
-5. Run the Flask app:
-   flask run
+```bash
+git clone https://github.com/yourusername/nepali-calendar-api.git
+cd nepali-calendar-api
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+2. **Set your admin API key:**
+```bash
+ADMIN_API_KEY = "your-secret-admin-key"
+```
+
+3. **Run the server:**
+ ```bash
+flask run
+```
+
+## 🌟 Features
+✅ Convert AD ↔ BS dates
+
+✅ Get today’s date in both calendars with Nepali weekday & digits
+
+✅ Retrieve festivals by year or date
+
+✅ Add new festivals via secured admin API
+
+✅ Simple JSON-based data storage — no database needed
+
+
+## 📬 API Endpoints
+
+| Endpoint                  | Method | Description                  | Parameters                   |
+|---------------------------|--------|------------------------------|------------------------------|
+| `/api/today`              | GET    | Today’s date (AD, BS, weekday) | —                            |
+| `/api/convert/ad-to-bs`   | GET    | Convert AD to BS              | `?date=YYYY-MM-DD`           |
+| `/api/convert/bs-to-ad`   | GET    | Convert BS to AD              | `?date=YYYY-MM-DD`           |
+| `/api/festivals`          | GET    | Get festivals (all or by year) | Optional `?year=YYYY`        |
+| `/api/festivals/<bs_date>`| GET    | Festivals on a specific BS date | Path param: `YYYY-MM-DD` (BS) |
+| `/api/admin/festival`     | POST   | Add festival (admin only)     | JSON body + `x-api-key` header |
+
+
+## 🔐 Admin Authentication
+- Protect admin routes with x-api-key header
+- Set your key in utils/auth.py
+
+## 📦 Requirements
+- Flask
+- flask-cors
+- nepali-datetime

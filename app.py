@@ -62,6 +62,10 @@ def convert_ad_to_bs():
 @app.route('/api/convert/bs-to-ad', methods=['GET'])
 def convert_bs_to_ad():
     bs_date_str = request.args.get('date')  # Expects 2079-12-25
+
+    if not bs_date_str:
+        return jsonify({"error": "Missing 'date' query parameter"}), 400
+
     try:
         y, m, d = map(int, bs_date_str.split("-"))
         bs_date = nepali_date(y, m, d)
@@ -72,7 +76,6 @@ def convert_bs_to_ad():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-
 
 @app.route('/api/festivals', methods=['GET'])
 def get_festivals():

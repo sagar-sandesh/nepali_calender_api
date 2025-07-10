@@ -1,7 +1,7 @@
 # Nepali Calendar API 🇳🇵
 
 A lightweight Flask API to effortlessly work with Nepali dates.  
-Convert between Gregorian (AD) and Nepali Bikram Sambat (BS), get today’s date with Nepali digits & weekday, and manage festivals—all with simple REST endpoints.
+Convert between Gregorian (AD) and Nepali Bikram Sambat (BS), get today’s date with Nepali digits & weekday, and manage festivals—all with simple REST endpoints. Easy to use and light weight.
 
 ---
 

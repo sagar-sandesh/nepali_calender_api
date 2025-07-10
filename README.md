@@ -27,15 +27,15 @@ flask run
 ```
 
 ## 🌟 Features
-✅ Convert AD ↔ BS dates
+**✅ Convert AD ↔ BS dates**
 
-✅ Get today’s date in both calendars with Nepali weekday & digits
+**✅ Get today’s date in both calendars with Nepali weekday & digits**
 
-✅ Retrieve festivals by year or date
+**✅ Retrieve festivals by year or date**
 
-✅ Add new festivals via secured admin API
+**✅ Add new festivals via secured admin API**
 
-✅ Simple JSON-based data storage — no database needed
+**✅ Simple JSON-based data storage — no database needed**
 
 
 ## 📬 API Endpoints
